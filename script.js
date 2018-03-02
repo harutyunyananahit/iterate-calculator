@@ -94,7 +94,13 @@ const integral=(func,a,b,precision)=>{
   return sum;
 }
 const myBtn = document.getElementById('btn-1');
-
-myBtn.addEventListener('click', event => {
-console.log('I was clicked')
+const buttons = document.querySelectorAll('.button-group myBtn')
+buttons.forEach(currentButton => {
+  currentButton.addEventListener("click", event => {
+    if(textField.value === '0') {
+      textField.value = currentButton.innerText;
+    }
+    else{
+      textField.value += currentButton.innerText;
+  })
 })
